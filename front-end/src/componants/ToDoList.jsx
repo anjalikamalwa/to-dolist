@@ -70,11 +70,11 @@ const ToDoList = () => {
   const deleteTask = (_id) => {
     fetch(`${apiUrl}/api/tasks/${_id}`, {
       method: "DELETE",
-    }).then((result) => {
-      result.json().then((resp) => {
-        console.warn(resp);
-        fetchData();
+    }).then(() => {
+      toast.success("Task Deleted !", {
+        autoClose: 1000,
       });
+        fetchData();
     });
   };
 
@@ -88,7 +88,7 @@ const ToDoList = () => {
         <div className="to-do">
           <h1>To Do List</h1>
           <div className="btn">
-            <button onClick={handleAddTaskClick}>
+            <button onClick={handleAddTaskClick} id="add-Task">
               {showForm ? "Cancel" : " + Add Task"}
             </button>
           </div>
@@ -119,7 +119,7 @@ const ToDoList = () => {
         </div>
 
         <div className="task-data">
-          <table border={2}>
+          <table>
             <thead>
               <tr>
                 <th>TaskName:</th>
