@@ -123,7 +123,7 @@ const ToDoList = () => {
             <thead>
               <tr>
                 <th>TaskName:</th>
-                <th colSpan={2}>Details:</th>
+                <th colSpan={2}>Description:</th>
               </tr>
             </thead>
             {tasks.map((data, index) => {
